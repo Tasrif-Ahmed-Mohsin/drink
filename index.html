@@ -1,17 +1,16 @@
-```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Juice – Natural & Healthy</title>
 
+  <!-- Remix Icon & Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
-  
-  
-  Fresh Juice – Natural & Healthy
-
-  
-  
-  
-
-  
-  
+  <!--=============== INLINE CSS ===============-->
+  <style>
   /*=============== GOOGLE FONTS ===============*/
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -168,245 +167,245 @@
     .home__data{text-align:left}
     .about__container{grid-template-columns:repeat(2,1fr);align-items:center}
   }
-  
+  </style>
+</head>
+<body>
+  <!--=============== HEADER ===============-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo"><i class="ri-leaf-line"></i><span>Fresh Juice</span></a>
 
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home"     class="nav__link active-link">Home</a></li>
+          <li class="nav__item"><a href="#about"    class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#products" class="nav__link">Products</a></li>
+          <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="#contact"  class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
+      </div>
 
-  
-  
-    
-      Fresh Juice
+      <div class="nav__actions">
+        <i class="ri-search-line      nav__search" id="search-btn"></i>
+        <i class="ri-shopping-bag-line nav__shop"   id="cart-btn"></i>
+        <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line"></i></div>
+      </div>
+    </nav>
+  </header>
 
-      
-        
-          Home
-          About
-          Products
-          Services
-          Contact
-        
-        
-      
+  <!--=============== SEARCH ===============-->
+  <div class="search" id="search">
+    <form class="search__form">
+      <i class="ri-search-line search__icon"></i>
+      <input type="search" placeholder="What are you looking for?" class="search__input" />
+    </form>
+    <i class="ri-close-line search__close" id="search-close"></i>
+  </div>
 
-      
-        
-        
-        
-      
-    
-  
+  <!--=============== CART ===============-->
+  <div class="cart" id="cart">
+    <i class="ri-close-line cart__close" id="cart-close"></i>
+    <h2 class="cart__title-center">My Cart</h2>
 
-  
-  
-    
-      
-      
-    
-    
-  
+    <div class="cart__container">
+      <!-- Example item -->
+      <article class="cart__card">
+        <div class="cart__box">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=100" alt="Orange Juice" class="cart__img" />
+        </div>
+        <div class="cart__details">
+          <h3 class="cart__title">Orange Juice</h3>
+          <span class="cart__price">$4.99</span>
+          <div class="cart__amount">
+            <div class="cart__amount-content">
+              <span class="cart__amount-box"><i class="ri-subtract-line cart__amount-trash"></i></span>
+              <span class="cart__amount-number">1</span>
+              <span class="cart__amount-box"><i class="ri-add-line cart__amount-trash"></i></span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
 
-  
-  
-    
-    My Cart
+    <div class="cart__prices">
+      <span class="cart__prices-item">3 items</span>
+      <span class="cart__prices-total">$14.97</span>
+    </div>
+  </div>
 
-    
-      
-      
-        
-          
-        
-        
-          Orange Juice
-          $4.99
-          
-            
-              
-              1
-              
-            
-          
-        
-      
-    
-
-    
-      3 items
-      $14.97
-    
-  
-
-  
-  
-    
-    
-      
-        
-          
-            Choose The Best Healthy Juice For Your Life
-          
-          
+  <!--=============== MAIN ===============-->
+  <main class="main">
+    <!--========== HOME ==========-->
+    <section class="home section" id="home">
+      <div class="home__container container grid">
+        <div class="home__data">
+          <h1 class="home__title">
+            Choose The Best <div>Healthy Juice</div> <span>For Your Life</span>
+          </h1>
+          <p class="home__description">
             We provide the freshest and most nutritious juices made from 100% natural fruits, packed with vitamins and minerals to boost your health and energy.
-          
-          Shop Now
-        
+          </p>
+          <a href="#products" class="button">Shop Now</a>
+        </div>
 
-        
-          
-            
-              
-            
-          
-          
-          
-        
-      
-    
+        <div class="home__images">
+          <div class="home__circle">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#ff6b35" d="M44.3,-76.2C58.1,-69.2,70.5,-59.1,79.6,-46.1C88.6,-33.1,94.4,-16.6,94.4,0C94.4,16.6,88.6,33.1,79.6,46.1C70.5,59.1,58.1,69.2,44.3,76.2C30.4,83.2,15.2,87.1,0,87.1C-15.2,87.1,-30.4,83.2,-44.3,76.2C-58.1,69.2,-70.5,59.1,-79.6,46.1C-88.6,33.1,-94.4,16.6,-94.4,0C-94.4,-16.6,-88.6,-33.1,-79.6,-46.1C-70.5,-59.1,-58.1,-69.2,-44.3,-76.2C-30.4,-83.2,-15.2,-87.1,0,-87.1C15.2,-87.1,30.4,-83.2,44.3,-76.2Z" transform="translate(100 100)"/>
+            </svg>
+          </div>
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400" alt="Orange Juice" class="home__img" />
+          <div class="home__shadow"></div>
+        </div>
+      </div>
+    </section>
 
-    
-    
-      
-        
-          About Us
-          
-            We Provide Healthy Juice For Your Better Life
-          
-          
+    <!--========== ABOUT ==========-->
+    <section class="about section" id="about">
+      <div class="about__container container grid">
+        <div class="about__data">
+          <span class="section__subtitle">About Us</span>
+          <h2 class="section__title about__title">
+            We Provide <span>Healthy</span> Juice For Your Better Life
+          </h2>
+          <p class="about__description">
             Our passion is creating the perfect blend of taste and nutrition. Every glass contains fruits carefully selected from the best farms, ensuring maximum vitamins and minerals.
-          
-          
-            100% Natural Ingredients
-            No Artificial Preservatives
-            Rich in Vitamins & Minerals
-            Fresh Daily Production
-          
-        
+          </p>
+          <ul class="about__list">
+            <li class="about__item"><i class="ri-check-line"></i><span>100% Natural Ingredients</span></li>
+            <li class="about__item"><i class="ri-check-line"></i><span>No Artificial Preservatives</span></li>
+            <li class="about__item"><i class="ri-check-line"></i><span>Rich in Vitamins & Minerals</span></li>
+            <li class="about__item"><i class="ri-check-line"></i><span>Fresh Daily Production</span></li>
+          </ul>
+        </div>
 
-        
-          
-        
-      
-    
+        <div class="about__img">
+          <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?w=500" alt="About Us">
+        </div>
+      </div>
+    </section>
 
-    
-    
-      Our Products
-      Fresh Juice Collection
+    <!--========== PRODUCTS ==========-->
+    <section class="products section" id="products">
+      <span class="section__subtitle">Our Products</span>
+      <h2 class="section__title">Fresh Juice <span>Collection</span></h2>
 
-      
-        
-        
-          
-          
-            Fresh OrangeCitrus Juice
-            $4.99
-            
-          
-        
+      <div class="products__container container grid">
+        <!-- Product 1 -->
+        <article class="products__card">
+          <div class="products__shape"><img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300" alt="Orange Juice" class="products__img" /></div>
+          <div class="products__data">
+            <h2 class="products__title">Fresh Orange</h2><span class="products__subtitle">Citrus Juice</span>
+            <h3 class="products__price">$4.99</h3>
+            <button class="products__button"><i class="ri-shopping-bag-line"></i></button>
+          </div>
+        </article>
 
-        
-        
-          
-          
-            Green AppleFresh Juice
-            $3.99
-            
-          
-        
+        <!-- Product 2 -->
+        <article class="products__card">
+          <div class="products__shape"><img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=300" alt="Apple Juice" class="products__img" /></div>
+          <div class="products__data">
+            <h2 class="products__title">Green Apple</h2><span class="products__subtitle">Fresh Juice</span>
+            <h3 class="products__price">$3.99</h3>
+            <button class="products__button"><i class="ri-shopping-bag-line"></i></button>
+          </div>
+        </article>
 
-        
-        
-          
-          
-            Mixed BerryAntioxidant Rich
-            $5.99
-            
-          
-        
+        <!-- Product 3 -->
+        <article class="products__card">
+          <div class="products__shape"><img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=300" alt="Berry Juice" class="products__img" /></div>
+          <div class="products__data">
+            <h2 class="products__title">Mixed Berry</h2><span class="products__subtitle">Antioxidant Rich</span>
+            <h3 class="products__price">$5.99</h3>
+            <button class="products__button"><i class="ri-shopping-bag-line"></i></button>
+          </div>
+        </article>
 
-        
-        
-          
-          
-            Tropical MixExotic Blend
-            $6.99
-            
-          
-        
-      
-    
+        <!-- Product 4 -->
+        <article class="products__card">
+          <div class="products__shape"><img src="https://images.unsplash.com/photo-1546548970-71785318a17b?w=300" alt="Tropical Juice" class="products__img" /></div>
+          <div class="products__data">
+            <h2 class="products__title">Tropical Mix</h2><span class="products__subtitle">Exotic Blend</span>
+            <h3 class="products__price">$6.99</h3>
+            <button class="products__button"><i class="ri-shopping-bag-line"></i></button>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    
-    
-      Our Services
-      Why Choose Us
+    <!--========== SERVICES ==========-->
+    <section class="services section" id="services">
+      <span class="section__subtitle">Our Services</span>
+      <h2 class="section__title">Why Choose <span>Us</span></h2>
 
-      
-        
-          
-          Free Delivery
-          Free delivery on orders over $25. Fast and reliable shipping to your doorstep.
-        
+      <div class="services__container container grid">
+        <article class="services__card">
+          <div class="services__shape"><i class="ri-truck-line services__icon"></i></div>
+          <h3 class="services__title">Free Delivery</h3>
+          <p class="services__description">Free delivery on orders over $25. Fast and reliable shipping to your doorstep.</p>
+        </article>
 
-        
-          
-          Quality Guarantee
-          100% satisfaction guarantee. If you're not happy, we'll make it right.
-        
+        <article class="services__card">
+          <div class="services__shape"><i class="ri-shield-check-line services__icon"></i></div>
+          <h3 class="services__title">Quality Guarantee</h3>
+          <p class="services__description">100% satisfaction guarantee. If you're not happy, we'll make it right.</p>
+        </article>
 
-        
-          
-          24/7 Support
-          Round-the-clock support to help you with any questions or concerns.
-        
-      
-    
-  
+        <article class="services__card">
+          <div class="services__shape"><i class="ri-customer-service-2-line services__icon"></i></div>
+          <h3 class="services__title">24/7 Support</h3>
+          <p class="services__description">Round-the-clock support to help you with any questions or concerns.</p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-  
-  
-    
-      
-        Fresh Juice
-        Providing fresh and healthy juices since 2020. Your health is our priority.
-      
+  <!--=============== FOOTER ===============-->
+  <footer class="footer" id="contact">
+    <div class="footer__container container grid">
+      <div class="footer__content">
+        <a href="#" class="footer__logo"><i class="ri-leaf-line"></i><span>Fresh Juice</span></a>
+        <p class="footer__description">Providing fresh and healthy juices since 2020. Your health is our priority.</p>
+      </div>
 
-      
-        Quick Links
-        
-          Home
-          About
-          Products
-          Services
-        
-      
+      <div class="footer__content">
+        <h3 class="footer__title">Quick Links</h3>
+        <ul class="footer__links">
+          <li><a href="#home"     class="footer__link">Home</a></li>
+          <li><a href="#about"    class="footer__link">About</a></li>
+          <li><a href="#products" class="footer__link">Products</a></li>
+          <li><a href="#services" class="footer__link">Services</a></li>
+        </ul>
+      </div>
 
-      
-        Contact Info
-        
-          +1 234 567 8900
-          info@freshjuice.com
-          123 Juice Street, Fresh City
-        
-      
+      <div class="footer__content">
+        <h3 class="footer__title">Contact Info</h3>
+        <ul class="footer__links">
+          <li class="footer__info"><i class="ri-phone-line"></i><span>+1 234 567 8900</span></li>
+          <li class="footer__info"><i class="ri-mail-line"></i><span>info@freshjuice.com</span></li>
+          <li class="footer__info"><i class="ri-map-pin-line"></i><span>123 Juice Street, Fresh City</span></li>
+        </ul>
+      </div>
 
-      
-        Follow Us
-        
-          
-          
-          
-          
-        
-      
-    
-    &#169; 2025 Fresh Juice. All rights reserved.
-  
+      <div class="footer__content">
+        <h3 class="footer__title">Follow Us</h3>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link"><i class="ri-facebook-fill"></i></a>
+          <a href="#" class="footer__social-link"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="footer__social-link"><i class="ri-twitter-line"></i></a>
+          <a href="#" class="footer__social-link"><i class="ri-youtube-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <span class="footer__copy">&#169; 2025 Fresh Juice. All rights reserved.</span>
+  </footer>
 
-  
-  
+  <!-- Scroll Up Button -->
+  <a href="#" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
 
-  
-  
+  <!--=============== INLINE JS ===============-->
+  <script>
   /*=============== MENU SHOW / HIDE ===============*/
   const navMenu  = document.getElementById('nav-menu'),
         navToggle= document.getElementById('nav-toggle'),
@@ -452,9 +451,13 @@
             sectionTop    = current.offsetTop - 58,
             sectionId     = current.getAttribute('id'),
             link          = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-      if (scrollY > sectionTop && scrollY 
-
-
-```
-
-The entire site—HTML, CSS, and JavaScript—is now consolidated in one file. Save the code as `index.html`, open it in your browser, and everything will work exactly as before.
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        link.classList.add('active-link')
+      } else {
+        link.classList.remove('active-link')
+      }
+    })
+  })
+  </script>
+</body>
+</html>
