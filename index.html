@@ -1,253 +1,460 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fresh Juice – Natural & Healthy</title>
+```html
 
-  <!-- Remix Icon & Google Fonts -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Site CSS -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!--=============== HEADER ===============-->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo"><i class="ri-leaf-line"></i><span>Fresh Juice</span></a>
 
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home"     class="nav__link active-link">Home</a></li>
-          <li class="nav__item"><a href="#about"    class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#products" class="nav__link">Products</a></li>
-          <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-          <li class="nav__item"><a href="#contact"  class="nav__link">Contact</a></li>
-        </ul>
-        <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
-      </div>
+  
+  
+  Fresh Juice – Natural & Healthy
 
-      <div class="nav__actions">
-        <i class="ri-search-line      nav__search" id="search-btn"></i>
-        <i class="ri-shopping-bag-line nav__shop"   id="cart-btn"></i>
-        <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line"></i></div>
-      </div>
-    </nav>
-  </header>
+  
+  
+  
 
-  <!--=============== SEARCH ===============-->
-  <div class="search" id="search">
-    <form class="search__form">
-      <i class="ri-search-line search__icon"></i>
-      <input type="search" placeholder="What are you looking for?" class="search__input" />
-    </form>
-    <i class="ri-close-line search__close" id="search-close"></i>
-  </div>
+  
+  
+  /*=============== GOOGLE FONTS ===============*/
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-  <!--=============== CART ===============-->
-  <div class="cart" id="cart">
-    <i class="ri-close-line cart__close" id="cart-close"></i>
-    <h2 class="cart__title-center">My Cart</h2>
+  /*=============== VARIABLES ===============*/
+  :root{
+    --header-height:3.5rem;
+    --primary-color:#ff6b35;
+    --secondary-color:#1b4332;
+    --text-color:#333;
+    --body-color:#fff;
+    --container-color:#fafafa;
 
-    <div class="cart__container">
-      <!-- Example item -->
-      <article class="cart__card">
-        <div class="cart__box">
-          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=100" alt="Orange Juice" class="cart__img" />
-        </div>
-        <div class="cart__details">
-          <h3 class="cart__title">Orange Juice</h3>
-          <span class="cart__price">$4.99</span>
-          <div class="cart__amount">
-            <div class="cart__amount-content">
-              <span class="cart__amount-box"><i class="ri-subtract-line cart__amount-trash"></i></span>
-              <span class="cart__amount-number">1</span>
-              <span class="cart__amount-box"><i class="ri-add-line cart__amount-trash"></i></span>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
+    --body-font:'Poppins',sans-serif;
+    --big-font-size:2rem;
+    --h1-font-size:1.5rem;
+    --h2-font-size:1.25rem;
+    --h3-font-size:1rem;
+    --normal-font-size:.938rem;
+    --small-font-size:.813rem;
 
-    <div class="cart__prices">
-      <span class="cart__prices-item">3 items</span>
-      <span class="cart__prices-total">$14.97</span>
-    </div>
-  </div>
+    --font-medium:500;
+    --font-semi-bold:600;
 
-  <!--=============== MAIN ===============-->
-  <main class="main">
-    <!--========== HOME ==========-->
-    <section class="home section" id="home">
-      <div class="home__container container grid">
-        <div class="home__data">
-          <h1 class="home__title">
-            Choose The Best <div>Healthy Juice</div> <span>For Your Life</span>
-          </h1>
-          <p class="home__description">
+    --z-tooltip:10;
+    --z-fixed:100;
+  }
+
+  /*=============== BASE STYLES ===============*/
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body-font);
+    font-size:var(--normal-font-size);
+    background:var(--body-color);
+    color:var(--text-color);
+  }
+  h1,h2,h3{font-weight:var(--font-semi-bold)}
+  ul{list-style:none}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;height:auto}
+
+  /*=============== REUSABLE CLASSES ===============*/
+  .container{max-width:1024px;margin-inline:1.5rem}
+  .grid{display:grid;gap:1.5rem}
+  .section{padding-block:4rem 2rem}
+  .section__title{font-size:var(--h1-font-size);color:var(--secondary-color);text-align:center;margin-bottom:1.5rem}
+  .section__subtitle{display:block;font-size:var(--small-font-size);color:var(--primary-color);text-align:center;margin-bottom:.5rem}
+  .button{display:inline-block;background:var(--primary-color);color:#fff;padding:1rem 1.75rem;border-radius:.5rem;font-weight:var(--font-medium);transition:.3s}
+  .button:hover{background:#e65a26}
+
+  /*=============== HEADER ===============*/
+  .header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.9);box-shadow:0 1px 4px rgba(0,0,0,.1);z-index:var(--z-fixed)}
+  .nav{height:var(--header-height);display:flex;align-items:center;justify-content:space-between}
+  .nav__logo{display:flex;align-items:center;gap:.5rem;font-size:var(--h3-font-size);font-weight:var(--font-semi-bold);color:var(--secondary-color)}
+  .nav__logo i{font-size:1.5rem;color:var(--primary-color)}
+  .nav__menu{position:fixed;top:-100%;left:0;width:100%;background:var(--body-color);padding:4.5rem 1.5rem;transition:.4s}
+  .nav__list{display:flex;flex-direction:column;row-gap:2rem;text-align:center}
+  .nav__link{font-weight:var(--font-medium);transition:.3s}
+  .nav__link:hover{color:var(--primary-color)}
+  .nav__close{position:absolute;top:1rem;right:1.5rem;font-size:1.5rem;color:var(--primary-color);cursor:pointer}
+  .nav__toggle{font-size:1.5rem;color:var(--secondary-color);cursor:pointer}
+  .show-menu{top:0}
+  .active-link{color:var(--primary-color)}
+
+  /*=============== SEARCH ===============*/
+  .search{position:fixed;top:-100%;left:0;width:100%;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);padding:1.5rem 1.5rem 4rem;transition:.4s;z-index:var(--z-fixed)}
+  .search__form{display:flex;align-items:center;gap:.5rem;background:var(--body-color);padding-inline:1rem;border-radius:.5rem}
+  .search__icon{font-size:1.25rem;color:var(--primary-color)}
+  .search__input{width:100%;padding:1rem 0;border:none;background:transparent}
+  .search__close{position:absolute;top:1rem;right:1.5rem;font-size:1.5rem;color:#fff;cursor:pointer}
+  .show-search{top:0}
+
+  /*=============== CART ===============*/
+  .cart{position:fixed;right:-100%;top:0;width:360px;max-width:100%;height:100vh;padding:2rem 1.5rem;background:var(--body-color);box-shadow:-2px 0 4px rgba(0,0,0,.1);transition:.4s;z-index:var(--z-fixed)}
+  .cart__close{position:absolute;top:1rem;right:1.5rem;font-size:1.5rem;color:var(--primary-color);cursor:pointer}
+  .cart__title-center{text-align:center;margin-bottom:2rem;color:var(--secondary-color)}
+  .cart__container{display:grid;row-gap:1.5rem}
+  .cart__card{display:flex;align-items:center;gap:1rem}
+  .cart__box{background:var(--container-color);padding:.5rem;border-radius:.5rem}
+  .cart__img{width:60px}
+  .cart__title{margin-bottom:.5rem}
+  .cart__price{font-size:var(--small-font-size);color:var(--primary-color)}
+  .cart__amount{display:flex;align-items:center;gap:.5rem}
+  .cart__amount-box{background:var(--container-color);padding:.25rem;border-radius:.25rem;cursor:pointer}
+  .cart__amount-trash{font-size:1rem;color:var(--primary-color)}
+  .cart__amount-number{font-size:var(--small-font-size)}
+  .cart__prices{margin-top:2rem;display:flex;justify-content:space-between}
+  .cart__prices-total{font-size:var(--h3-font-size);color:var(--secondary-color)}
+  .show-cart{right:0}
+
+  /*=============== HOME ===============*/
+  .home{padding-top:calc(var(--header-height)+2rem);overflow:hidden}
+  .home__data{text-align:center}
+  .home__title{font-size:var(--big-font-size);margin-bottom:1rem}
+  .home__title div{color:var(--primary-color)}
+  .home__description{margin-bottom:2rem}
+  .home__images{position:relative;width:300px;margin-inline:auto}
+  .home__circle{position:absolute;inset:0;z-index:-1}
+  .home__shadow{position:absolute;bottom:-1rem;left:50%;width:200px;height:20px;background:rgba(0,0,0,.1);border-radius:50%;transform:translateX(-50%);filter:blur(8px)}
+
+  /*=============== ABOUT ===============*/
+  .about__data{text-align:center}
+  .about__title span{color:var(--primary-color)}
+  .about__list{margin-top:1rem;display:grid;row-gap:.75rem}
+  .about__item{display:flex;align-items:center;gap:.5rem;justify-content:center}
+  .about__item i{color:var(--primary-color)}
+
+  /*=============== PRODUCTS ===============*/
+  .products__container{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .products__card{background:var(--container-color);border-radius:.5rem;padding:1.5rem;text-align:center;transition:.3s}
+  .products__card:hover{transform:translateY(-.5rem)}
+  .products__shape{width:150px;height:150px;margin:0 auto 1rem;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .products__img{width:130px}
+  .products__title{margin-bottom:.25rem}
+  .products__subtitle{font-size:var(--small-font-size);margin-bottom:.75rem}
+  .products__price{font-size:var(--h3-font-size);color:var(--primary-color);margin-bottom:1rem}
+  .products__button{background:var(--primary-color);color:#fff;padding:.5rem 1rem;border:none;border-radius:.25rem;cursor:pointer}
+  .products__button:hover{background:#e65a26}
+
+  /*=============== SERVICES ===============*/
+  .services__container{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .services__card{text-align:center;padding:2rem 1rem;background:var(--container-color);border-radius:.5rem}
+  .services__shape{width:64px;height:64px;margin:0 auto 1rem;display:grid;place-items:center;background:var(--primary-color);border-radius:50%}
+  .services__icon{font-size:1.5rem;color:#fff}
+
+  /*=============== FOOTER ===============*/
+  .footer{background:var(--secondary-color);color:#fff;padding:4rem 0 2rem}
+  .footer__container{row-gap:2rem}
+  .footer__logo{display:flex;align-items:center;gap:.5rem;font-size:var(--h3-font-size);font-weight:var(--font-semi-bold)}
+  .footer__logo i{font-size:1.5rem;color:var(--primary-color)}
+  .footer__description{margin-top:1rem;max-width:250px}
+  .footer__title{font-size:var(--h3-font-size);margin-bottom:1rem}
+  .footer__links{display:grid;row-gap:.5rem}
+  .footer__link{transition:.3s}
+  .footer__link:hover{color:var(--primary-color)}
+  .footer__info{display:flex;align-items:center;gap:.5rem}
+  .footer__info i{color:var(--primary-color)}
+  .footer__social{display:flex;gap:.75rem}
+  .footer__social-link i{font-size:1.25rem;transition:.3s}
+  .footer__social-link:hover i{color:var(--primary-color)}
+  .footer__copy{display:block;text-align:center;margin-top:3rem;font-size:var(--small-font-size)}
+
+  /*=============== SCROLL UP ===============*/
+  .scrollup{position:fixed;right:1rem;bottom:-20%;background:var(--primary-color);color:#fff;padding:.5rem;border-radius:.25rem;font-size:1.25rem;transition:.3s}
+  .scrollup:hover{transform:translateY(-.25rem)}
+  .show-scroll{bottom:3rem}
+
+  /*=============== BREAKPOINTS ===============*/
+  @media(min-width:768px){
+    .nav__menu{position:initial;background:transparent;padding:0;width:auto}
+    .nav__list{flex-direction:row;column-gap:2rem}
+    .nav__close,.nav__toggle{display:none}
+    .home__container{grid-template-columns:repeat(2,1fr);align-items:center}
+    .home__data{text-align:left}
+    .about__container{grid-template-columns:repeat(2,1fr);align-items:center}
+  }
+  
+
+
+  
+  
+    
+      Fresh Juice
+
+      
+        
+          Home
+          About
+          Products
+          Services
+          Contact
+        
+        
+      
+
+      
+        
+        
+        
+      
+    
+  
+
+  
+  
+    
+      
+      
+    
+    
+  
+
+  
+  
+    
+    My Cart
+
+    
+      
+      
+        
+          
+        
+        
+          Orange Juice
+          $4.99
+          
+            
+              
+              1
+              
+            
+          
+        
+      
+    
+
+    
+      3 items
+      $14.97
+    
+  
+
+  
+  
+    
+    
+      
+        
+          
+            Choose The Best Healthy Juice For Your Life
+          
+          
             We provide the freshest and most nutritious juices made from 100% natural fruits, packed with vitamins and minerals to boost your health and energy.
-          </p>
-          <a href="#products" class="button">Shop Now</a>
-        </div>
+          
+          Shop Now
+        
 
-        <div class="home__images">
-          <div class="home__circle">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#ff6b35" d="M44.3,-76.2C58.1,-69.2,70.5,-59.1,79.6,-46.1C88.6,-33.1,94.4,-16.6,94.4,0C94.4,16.6,88.6,33.1,79.6,46.1C70.5,59.1,58.1,69.2,44.3,76.2C30.4,83.2,15.2,87.1,0,87.1C-15.2,87.1,-30.4,83.2,-44.3,76.2C-58.1,69.2,-70.5,59.1,-79.6,46.1C-88.6,33.1,-94.4,16.6,-94.4,0C-94.4,-16.6,-88.6,-33.1,-79.6,-46.1C-70.5,-59.1,-58.1,-69.2,-44.3,-76.2C-30.4,-83.2,-15.2,-87.1,0,-87.1C15.2,-87.1,30.4,-83.2,44.3,-76.2Z" transform="translate(100 100)"/>
-            </svg>
-          </div>
-          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400" alt="Orange Juice" class="home__img" />
-          <div class="home__shadow"></div>
-        </div>
-      </div>
-    </section>
+        
+          
+            
+              
+            
+          
+          
+          
+        
+      
+    
 
-    <!--========== ABOUT ==========-->
-    <section class="about section" id="about">
-      <div class="about__container container grid">
-        <div class="about__data">
-          <span class="section__subtitle">About Us</span>
-          <h2 class="section__title about__title">
-            We Provide <span>Healthy</span> Juice For Your Better Life
-          </h2>
-          <p class="about__description">
+    
+    
+      
+        
+          About Us
+          
+            We Provide Healthy Juice For Your Better Life
+          
+          
             Our passion is creating the perfect blend of taste and nutrition. Every glass contains fruits carefully selected from the best farms, ensuring maximum vitamins and minerals.
-          </p>
-          <ul class="about__list">
-            <li class="about__item"><i class="ri-check-line"></i><span>100% Natural Ingredients</span></li>
-            <li class="about__item"><i class="ri-check-line"></i><span>No Artificial Preservatives</span></li>
-            <li class="about__item"><i class="ri-check-line"></i><span>Rich in Vitamins & Minerals</span></li>
-            <li class="about__item"><i class="ri-check-line"></i><span>Fresh Daily Production</span></li>
-          </ul>
-        </div>
+          
+          
+            100% Natural Ingredients
+            No Artificial Preservatives
+            Rich in Vitamins & Minerals
+            Fresh Daily Production
+          
+        
 
-        <div class="about__img">
-          <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?w=500" alt="About Us">
-        </div>
-      </div>
-    </section>
+        
+          
+        
+      
+    
 
-    <!--========== PRODUCTS ==========-->
-    <section class="products section" id="products">
-      <span class="section__subtitle">Our Products</span>
-      <h2 class="section__title">Fresh Juice <span>Collection</span></h2>
+    
+    
+      Our Products
+      Fresh Juice Collection
 
-      <div class="products__container container grid">
-        <!-- Product 1 -->
-        <article class="products__card">
-          <div class="products__shape"><img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300" alt="Orange Juice" class="products__img" /></div>
-          <div class="products__data">
-            <h2 class="products__title">Fresh Orange</h2><span class="products__subtitle">Citrus Juice</span>
-            <h3 class="products__price">$4.99</h3>
-            <button class="products__button"><i class="ri-shopping-bag-line"></i></button>
-          </div>
-        </article>
+      
+        
+        
+          
+          
+            Fresh OrangeCitrus Juice
+            $4.99
+            
+          
+        
 
-        <!-- Product 2 -->
-        <article class="products__card">
-          <div class="products__shape"><img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=300" alt="Apple Juice" class="products__img" /></div>
-          <div class="products__data">
-            <h2 class="products__title">Green Apple</h2><span class="products__subtitle">Fresh Juice</span>
-            <h3 class="products__price">$3.99</h3>
-            <button class="products__button"><i class="ri-shopping-bag-line"></i></button>
-          </div>
-        </article>
+        
+        
+          
+          
+            Green AppleFresh Juice
+            $3.99
+            
+          
+        
 
-        <!-- Product 3 -->
-        <article class="products__card">
-          <div class="products__shape"><img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=300" alt="Berry Juice" class="products__img" /></div>
-          <div class="products__data">
-            <h2 class="products__title">Mixed Berry</h2><span class="products__subtitle">Antioxidant Rich</span>
-            <h3 class="products__price">$5.99</h3>
-            <button class="products__button"><i class="ri-shopping-bag-line"></i></button>
-          </div>
-        </article>
+        
+        
+          
+          
+            Mixed BerryAntioxidant Rich
+            $5.99
+            
+          
+        
 
-        <!-- Product 4 -->
-        <article class="products__card">
-          <div class="products__shape"><img src="https://images.unsplash.com/photo-1546548970-71785318a17b?w=300" alt="Tropical Juice" class="products__img" /></div>
-          <div class="products__data">
-            <h2 class="products__title">Tropical Mix</h2><span class="products__subtitle">Exotic Blend</span>
-            <h3 class="products__price">$6.99</h3>
-            <button class="products__button"><i class="ri-shopping-bag-line"></i></button>
-          </div>
-        </article>
-      </div>
-    </section>
+        
+        
+          
+          
+            Tropical MixExotic Blend
+            $6.99
+            
+          
+        
+      
+    
 
-    <!--========== SERVICES ==========-->
-    <section class="services section" id="services">
-      <span class="section__subtitle">Our Services</span>
-      <h2 class="section__title">Why Choose <span>Us</span></h2>
+    
+    
+      Our Services
+      Why Choose Us
 
-      <div class="services__container container grid">
-        <article class="services__card">
-          <div class="services__shape"><i class="ri-truck-line services__icon"></i></div>
-          <h3 class="services__title">Free Delivery</h3>
-          <p class="services__description">Free delivery on orders over $25. Fast and reliable shipping to your doorstep.</p>
-        </article>
+      
+        
+          
+          Free Delivery
+          Free delivery on orders over $25. Fast and reliable shipping to your doorstep.
+        
 
-        <article class="services__card">
-          <div class="services__shape"><i class="ri-shield-check-line services__icon"></i></div>
-          <h3 class="services__title">Quality Guarantee</h3>
-          <p class="services__description">100% satisfaction guarantee. If you're not happy, we'll make it right.</p>
-        </article>
+        
+          
+          Quality Guarantee
+          100% satisfaction guarantee. If you're not happy, we'll make it right.
+        
 
-        <article class="services__card">
-          <div class="services__shape"><i class="ri-customer-service-2-line services__icon"></i></div>
-          <h3 class="services__title">24/7 Support</h3>
-          <p class="services__description">Round-the-clock support to help you with any questions or concerns.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+        
+          
+          24/7 Support
+          Round-the-clock support to help you with any questions or concerns.
+        
+      
+    
+  
 
-  <!--=============== FOOTER ===============-->
-  <footer class="footer">
-    <div class="footer__container container grid">
-      <div class="footer__content">
-        <a href="#" class="footer__logo"><i class="ri-leaf-line"></i><span>Fresh Juice</span></a>
-        <p class="footer__description">Providing fresh and healthy juices since 2020. Your health is our priority.</p>
-      </div>
+  
+  
+    
+      
+        Fresh Juice
+        Providing fresh and healthy juices since 2020. Your health is our priority.
+      
 
-      <div class="footer__content">
-        <h3 class="footer__title">Quick Links</h3>
-        <ul class="footer__links">
-          <li><a href="#home"     class="footer__link">Home</a></li>
-          <li><a href="#about"    class="footer__link">About</a></li>
-          <li><a href="#products" class="footer__link">Products</a></li>
-          <li><a href="#services" class="footer__link">Services</a></li>
-        </ul>
-      </div>
+      
+        Quick Links
+        
+          Home
+          About
+          Products
+          Services
+        
+      
 
-      <div class="footer__content">
-        <h3 class="footer__title">Contact Info</h3>
-        <ul class="footer__links">
-          <li class="footer__info"><i class="ri-phone-line"></i><span>+1 234 567 8900</span></li>
-          <li class="footer__info"><i class="ri-mail-line"></i><span>info@freshjuice.com</span></li>
-          <li class="footer__info"><i class="ri-map-pin-line"></i><span>123 Juice Street, Fresh City</span></li>
-        </ul>
-      </div>
+      
+        Contact Info
+        
+          +1 234 567 8900
+          info@freshjuice.com
+          123 Juice Street, Fresh City
+        
+      
 
-      <div class="footer__content">
-        <h3 class="footer__title">Follow Us</h3>
-        <div class="footer__social">
-          <a href="#" class="footer__social-link"><i class="ri-facebook-fill"></i></a>
-          <a href="#" class="footer__social-link"><i class="ri-instagram-line"></i></a>
-          <a href="#" class="footer__social-link"><i class="ri-twitter-line"></i></a>
-          <a href="#" class="footer__social-link"><i class="ri-youtube-line"></i></a>
-        </div>
-      </div>
-    </div>
-    <span class="footer__copy">&#169; 2025 Fresh Juice. All rights reserved.</span>
-  </footer>
+      
+        Follow Us
+        
+          
+          
+          
+          
+        
+      
+    
+    &#169; 2025 Fresh Juice. All rights reserved.
+  
 
-  <!-- Scroll Up Button -->
-  <a href="#" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
+  
+  
 
-  <!-- Site JS -->
-  <script src="script.js"></script>
-</body>
-</html>
+  
+  
+  /*=============== MENU SHOW / HIDE ===============*/
+  const navMenu  = document.getElementById('nav-menu'),
+        navToggle= document.getElementById('nav-toggle'),
+        navClose = document.getElementById('nav-close')
+
+  navToggle && navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'))
+  navClose  && navClose .addEventListener('click', () => navMenu.classList.remove('show-menu'))
+
+  /*=============== REMOVE MENU ON LINK CLICK ===============*/
+  document.querySelectorAll('.nav__link')
+          .forEach(n => n.addEventListener('click', () => navMenu.classList.remove('show-menu')))
+
+  /*=============== SEARCH ===============*/
+  const search      = document.getElementById('search'),
+        searchBtn   = document.getElementById('search-btn'),
+        searchClose = document.getElementById('search-close')
+
+  searchBtn   && searchBtn  .addEventListener('click', () => search.classList.add('show-search'))
+  searchClose && searchClose.addEventListener('click', () => search.classList.remove('show-search'))
+
+  /*=============== CART ===============*/
+  const cart      = document.getElementById('cart'),
+        cartBtn   = document.getElementById('cart-btn'),
+        cartClose = document.getElementById('cart-close')
+
+  cartBtn   && cartBtn  .addEventListener('click', () => cart.classList.add('show-cart'))
+  cartClose && cartClose.addEventListener('click', () => cart.classList.remove('show-cart'))
+
+  /*=============== SCROLL UP BUTTON ===============*/
+  const scrollUpBtn = document.getElementById('scroll-up')
+  window.addEventListener('scroll', () => {
+    window.scrollY >= 350
+      ? scrollUpBtn.classList.add('show-scroll')
+      : scrollUpBtn.classList.remove('show-scroll')
+  })
+
+  /*=============== ACTIVE LINK ON SCROLL ===============*/
+  const sections = document.querySelectorAll('section[id]')
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight,
+            sectionTop    = current.offsetTop - 58,
+            sectionId     = current.getAttribute('id'),
+            link          = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+      if (scrollY > sectionTop && scrollY 
+
+
+```
+
+The entire site—HTML, CSS, and JavaScript—is now consolidated in one file. Save the code as `index.html`, open it in your browser, and everything will work exactly as before.
