@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Go - Pure. Fresh. Natural.</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <div class="nav__brand-logo">2Go</div>
+                <div class="nav__brand-tagline">born fresh, served real</div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="nav__search">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search juices..." id="search-input">
+                    <button class="search-btn" id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-results" id="search-results"></div>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#products" class="nav__link">
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav__actions">
+                <div class="nav__cart" id="nav-cart">
+                    <i class="fas fa-shopping-cart nav__cart-icon"></i>
+                    <span class="nav__cart-count" id="cart-count">0</span>
+                </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Cart Dropdown -->
+        <div class="cart-dropdown" id="cart-dropdown">
+            <div class="cart-dropdown__header">
+                <h3>Your Cart</h3>
+                <button class="cart-close" id="cart-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-dropdown__content" id="cart-content">
+                <div class="cart-empty" id="cart-empty">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Your cart is empty</p>
+                    <a href="#products" class="btn btn--primary">Start Shopping</a>
+                </div>
+            </div>
+            <div class="cart-dropdown__footer" id="cart-footer" style="display: none;">
+                <div class="cart-total">
+                    <span>Total: <strong id="cart-total">0 BDT</strong></span>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn--secondary" id="view-cart">View Cart</button>
+                    <button class="btn btn--primary" id="checkout">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <div class="hero__badge">
+                    <i class="fas fa-leaf"></i>
+                    <span>100% Natural & Fresh</span>
+                </div>
+                <h1 class="hero__title">
+                    Pure. Fresh. <span class="gradient-text">Natural.</span>
+                </h1>
+                <p class="hero__description">
+                    Experience the authentic taste of fresh juices, born fresh and served real. 
+                    Made daily from the finest fruits with no preservatives - just pure, delicious nutrition in every bottle.
+                </p>
+                <div class="hero__actions">
+                    <a href="#products" class="btn btn--primary btn--large" id="hero-cta">
+                        <span>Explore Flavors</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero__features">
+                <div class="feature-highlight">
+                    <div class="feature-highlight__icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="feature-highlight__content">
+                        <span class="feature-highlight__title">100% Natural</span>
+                        <span class="feature-highlight__desc">Zero preservatives</span>
+                    </div>
+                </div>
+                <div class="feature-highlight">
+                    <div class="feature-highlight__icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-highlight__content">
+                        <span class="feature-highlight__title">Fresh Daily</span>
+                        <span class="feature-highlight__desc">Made every morning</span>
+                    </div>
+                </div>
+                <div class="feature-highlight">
+                    <div class="feature-highlight__icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="feature-highlight__content">
+                        <span class="feature-highlight__title">Premium Quality</span>
+                        <span class="feature-highlight__desc">Finest ingredients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section__header">
+                <div class="section__badge">
+                    <i class="fas fa-glass-whiskey"></i>
+                    <span>Our Collection</span>
+                </div>
+                <h2 class="section__title">Fresh Juice Collection</h2>
+                <p class="section__subtitle">
+                    Discover our carefully crafted selection of premium juices, each bursting with natural flavor
+                </p>
+            </div>
+            
+            <div class="products__grid">
+                <div class="product-card pineapple-theme" data-category="tropical" data-product="1">
+                    <div class="product-card__image-container">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/370e583b-f639-4679-b7f6-d2f817ebc4f6.png" 
+                             alt="2Go Pineapple Juice bottle with tropical yellow design" 
+                             class="product-card__image"
+                             loading="eager"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-card__fallback" style="display: none;">
+                            <i class="fas fa-glass-whiskey" style="font-size: 4rem; color: #FFE135;"></i>
+                        </div>
+                        <div class="product-card__badge">Tropical</div>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__header">
+                            <h3 class="product-card__title">Pineapple Juice</h3>
+                            <div class="product-card__size">250ml</div>
+                        </div>
+                        <p class="product-card__description">
+                            Tropical sweetness in every sip
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">
+                                <span class="price-current">60 BDT</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn qty-minus">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="10">
+                                    <button class="qty-btn qty-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product-id="1">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card coffee-theme" data-category="coffee" data-product="2">
+                    <div class="product-card__image-container">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/18a0b388-9eb0-43da-9618-28edfacf5b36.png" 
+                             alt="2Go Gold Coffee bottle with rich brown coffee design" 
+                             class="product-card__image"
+                             loading="eager"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-card__fallback" style="display: none;">
+                            <i class="fas fa-coffee" style="font-size: 4rem; color: #8B4513;"></i>
+                        </div>
+                        <div class="product-card__badge">Premium</div>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__header">
+                            <h3 class="product-card__title">Gold Coffee</h3>
+                            <div class="product-card__size">250ml</div>
+                        </div>
+                        <p class="product-card__description">
+                            Rich and aromatic coffee blend
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">
+                                <span class="price-current">90 BDT</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn qty-minus">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="10">
+                                    <button class="qty-btn qty-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product-id="2">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card watermelon-theme" data-category="fruit" data-product="3">
+                    <div class="product-card__image-container">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/bc6e87b9-8ff0-49f6-bd8f-adb43bf67d7a.png" 
+                             alt="2Go Watermelon Juice bottle with fresh pink-red design" 
+                             class="product-card__image"
+                             loading="eager"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-card__fallback" style="display: none;">
+                            <i class="fas fa-apple-alt" style="font-size: 4rem; color: #FF6B6B;"></i>
+                        </div>
+                        <div class="product-card__badge">Refreshing</div>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__header">
+                            <h3 class="product-card__title">Watermelon Juice</h3>
+                            <div class="product-card__size">250ml</div>
+                        </div>
+                        <p class="product-card__description">
+                            Refreshing summer hydration
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">
+                                <span class="price-current">60 BDT</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn qty-minus">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="10">
+                                    <button class="qty-btn qty-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product-id="3">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card lemon-guava-theme" data-category="mixed" data-product="4">
+                    <div class="product-card__image-container">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/8dcc0bb0-201b-46d6-995e-45964f62f62e.png" 
+                             alt="2Go Lemon+Guava Mixed Juice bottle with fresh green citrus design" 
+                             class="product-card__image"
+                             loading="eager"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-card__fallback" style="display: none;">
+                            <i class="fas fa-lemon" style="font-size: 4rem; color: #98E598;"></i>
+                        </div>
+                        <div class="product-card__badge">Zesty</div>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__header">
+                            <h3 class="product-card__title">Lemon+Guava Mixed Juice</h3>
+                            <div class="product-card__size">250ml</div>
+                        </div>
+                        <p class="product-card__description">
+                            Zesty citrus meets tropical guava
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">
+                                <span class="price-current">50 BDT</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn qty-minus">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="10">
+                                    <button class="qty-btn qty-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product-id="4">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card mango-milk-theme" data-category="mixed" data-product="5">
+                    <div class="product-card__image-container">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/55367801-0de5-471a-a7cc-7f2c79c4f7cc.png" 
+                             alt="2Go Mango+Milk Mixed Juice bottle with creamy orange design" 
+                             class="product-card__image"
+                             loading="eager"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="product-card__fallback" style="display: none;">
+                            <i class="fas fa-glass-whiskey" style="font-size: 4rem; color: #FFB347;"></i>
+                        </div>
+                        <div class="product-card__badge">Creamy</div>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__header">
+                            <h3 class="product-card__title">Mango+Milk Mixed Juice</h3>
+                            <div class="product-card__size">250ml</div>
+                        </div>
+                        <p class="product-card__description">
+                            Creamy mango delight
+                        </p>
+                        <div class="product-card__footer">
+                            <div class="product-card__price">
+                                <span class="price-current">70 BDT</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn qty-minus">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="10">
+                                    <button class="qty-btn qty-plus">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product-id="5">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section__header">
+                <div class="section__badge">
+                    <i class="fas fa-heart"></i>
+                    <span>Our Story</span>
+                </div>
+                <h2 class="section__title">About 2Go</h2>
+                <p class="section__subtitle">
+                    Born fresh, served real - 2Go brings you the finest selection of fresh juices made from premium quality fruits and ingredients. Our commitment to freshness and natural taste makes every sip a delightful experience.
+                </p>
+            </div>
+            
+            <div class="about__content">
+                <div class="about__text">
+                    <h3>Fresh. Natural. 2Go.</h3>
+                    <p>
+                        At 2Go, we believe that true wellness begins with what you put into your body. 
+                        That's why we source only the finest, freshest fruits, carefully selected 
+                        from trusted local farms with sustainable practices.
+                    </p>
+                    <p>
+                        Our fresh extraction process preserves maximum nutrients and natural flavors, 
+                        ensuring every sip delivers the full power of nature's bounty. No artificial additives, 
+                        no preservatives – just pure, delicious nutrition in every bottle.
+                    </p>
+                </div>
+                
+                <div class="about__features">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="feature-card__content">
+                            <h4>100% Natural Ingredients</h4>
+                            <p>No artificial preservatives, colors, or flavors. Just pure, natural goodness.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="feature-card__content">
+                            <h4>Fresh Daily Production</h4>
+                            <p>Made fresh every morning with locally sourced, premium produce.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="feature-card__content">
+                            <h4>Premium Quality</h4>
+                            <p>Only the finest fruits make it into our bottles, ensuring exceptional taste.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="feature-card__content">
+                            <h4>Nutritious & Healthy</h4>
+                            <p>Packed with vitamins, minerals, and natural antioxidants for your wellbeing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter__content">
+                <div class="newsletter__text">
+                    <h2 class="newsletter__title">Stay Fresh with 2Go</h2>
+                    <p class="newsletter__description">
+                        Subscribe to get the latest updates on new flavors, special offers, and healthy living tips
+                    </p>
+                </div>
+                <form class="newsletter__form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" class="form-control" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn--primary" id="newsletter-submit">
+                            <span>Subscribe</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="newsletter__privacy">
+                        <i class="fas fa-lock"></i>
+                        <span>We respect your privacy. Unsubscribe at any time.</span>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__section footer__section--brand">
+                        <div class="footer__brand">
+                            <div class="footer__brand-logo">2Go</div>
+                            <div class="footer__brand-tagline">born fresh, served real</div>
+                        </div>
+                        <p class="footer__description">
+                            Fresh. Natural. 2Go. Delivering nature's goodness directly to your glass with our 
+                            signature fresh approach to healthy living.
+                        </p>
+                        <div class="footer__social">
+                            <a href="#" target="_blank" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-link" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h3 class="footer__title">Quick Links</h3>
+                        <ul class="footer__list">
+                            <li><a href="#home" class="footer__link">Home</a></li>
+                            <li><a href="#products" class="footer__link">Products</a></li>
+                            <li><a href="#about" class="footer__link">About</a></li>
+                            <li><a href="#contact" class="footer__link">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h3 class="footer__title">Products</h3>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">Pineapple Juice</a></li>
+                            <li><a href="#" class="footer__link">Gold Coffee</a></li>
+                            <li><a href="#" class="footer__link">Watermelon Juice</a></li>
+                            <li><a href="#" class="footer__link">Lemon+Guava Mix</a></li>
+                            <li><a href="#" class="footer__link">Mango+Milk Mix</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h3 class="footer__title">Contact Info</h3>
+                        <div class="footer__contact">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+880-123-456789</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@2gojuice.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dhaka, Bangladesh</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Daily: 8AM-8PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-content">
+                    <p>&copy; 2025 2Go Juice. All rights reserved.</p>
+                    <p>Made with 💚 for healthy living</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
